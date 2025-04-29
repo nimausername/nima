@@ -1,3 +1,4 @@
+
 type Project = {
   name: string
   description: string
@@ -27,93 +28,153 @@ type SocialLink = {
   link: string
 }
 
+type Resume = {
+  label: string
+  link: string
+}
+
 export const PROJECTS: Project[] = [
   {
-    name: 'Motion Primitives Pro',
+    name: 'Woltanic GmbH - Web Development',
     description:
-      'Advanced components and templates to craft beautiful websites.',
-    link: 'https://pro.motion-primitives.com/',
+      'Web development and IT support for Woltanic GmbH, a leading renewable energy company in Germany. Mainly NextJs and React based.',
+    link: 'https://woltanic.de/',
     video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+      'https://res.cloudinary.com/dwaogvuok/video/upload/v1745884414/1_u9hvcb.mp4',
     id: 'project1',
   },
   {
-    name: 'Motion Primitives',
-    description: 'UI kit to make beautiful, animated interfaces.',
+    name: 'Alpak SAN. TİC. LTD. ŞTİ. - Web Development',
+    description: 'Food sector web development for Alpak SAN. TİC. LTD. ŞTİ. Mainly NextJs and React based.',
     link: 'https://motion-primitives.com/',
     video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
+      'https://res.cloudinary.com/dwaogvuok/video/upload/v1745885244/2_alwg7q.mp4',
     id: 'project2',
   },
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    company: 'Reglazed Studio',
-    title: 'CEO',
-    start: '2024',
+    company: 'Woltanic GmbH',
+    title: 'Web Developer - IT Support',
+    start: '03/2024',
     end: 'Present',
-    link: 'https://ibelick.com',
+    link: 'https://woltanic.de',
     id: 'work1',
   },
   {
-    company: 'Freelance',
-    title: 'Design Engineer',
-    start: '2022',
-    end: '2024',
-    link: 'https://ibelick.com',
+    company: 'WonderPower GmbH',
+    title: 'Web Developer',
+    start: '09/2023',
+    end: '01/2024',
+    link: 'https://wonderpower.de',
     id: 'work2',
   },
   {
-    company: 'Freelance',
-    title: 'Front-end Developer',
-    start: '2017',
-    end: 'Present',
+    company: 'TikTok',
+    title: 'Technical Support Specialist',
+    start: '08/2023',
+    end: '11/2023',
     link: 'https://ibelick.com',
     id: 'work3',
+  },
+  {
+    company: 'TÜBİTAK',
+    title: 'Research Staff',
+    start: '02/2022',
+    end: '09/2022',
+    link: 'https://tubitak.gov.tr/',
+    id: 'work4',
+  },
+  {
+    company: 'Apple',
+    title: 'Mac Genius',
+    start: '03/2020',
+    end: '02/2021',
+    link: 'https://apple.com/',
+    id: 'work5',
+  },
+  {
+    company: 'Çanakkale Onsekiz Mart University',
+    title: 'Graphic Web Designer',
+    start: '06/2019',
+    end: '01/2020',
+    link: 'https://www.comu.edu.tr/',
+    id: 'work6',
+  },
+  {
+    company: 'Nafsem L.T',
+    title: 'Graphic Web Designer',
+    start: '06/2019',
+    end: '01/2020',
+    link: '#',
+    id: 'work7',
+  },
+  {
+    company: 'Ajans Well',
+    title: 'Graphic Web Designer',
+    start: '05/2017',
+    end: '11/2017',
+    link: '#',
+    id: 'work8',
+  },
+  {
+    company: 'Totil International Consulting',
+    title: 'Graphic Designer',
+    start: '03/2016',
+    end: '03/2017',
+    link: '#',
+    id: 'work9',
+  },
+  {
+    company: 'Totil Arabic Language School',
+    title: 'Web Designer',
+    start: '02/2016',
+    end: '05/2017',
+    link: '#',
+    id: 'work10',
+  },
+  {
+    company: 'Venus Organization',
+    title: 'Web Designer',
+    start: '03/2015',
+    end: '05/2016',
+    link: '#',
+    id: 'work11',
   },
 ]
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    title: 'Exploring the Intersection of Design, AI, and Design Engineering',
-    description: 'How AI is changing the way we design',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
+    title: 'Uncoding My Journey: A Decade in Web Development',
+    description: 'A journey through the highs and lows of web development.',
+    link: '/blog/my-journey',
     uid: 'blog-1',
-  },
-  {
-    title: 'Why I left my job to start my own company',
-    description:
-      'A deep dive into my decision to leave my job and start my own company',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-2',
-  },
-  {
-    title: 'What I learned from my first year of freelancing',
-    description:
-      'A look back at my first year of freelancing and what I learned',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-3',
   },
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: 'Github',
-    link: 'https://github.com/ibelick',
+    link: 'https://github.com/nimausername/',
   },
   {
     label: 'Twitter',
-    link: 'https://twitter.com/ibelick',
+    link: 'https://x.com/nimausername',
   },
   {
     label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/ibelick',
+    link: 'https://www.linkedin.com/in/nimausername/',
   },
   {
     label: 'Instagram',
-    link: 'https://www.instagram.com/ibelick',
+    link: 'https://www.instagram.com/nimausername/',
   },
 ]
 
-export const EMAIL = 'your@email.com'
+export const EMAIL = 'iam@nimakhabbazi.com'
+
+export const RESUME: Resume = {
+  label: 'Download Resume',
+  link: '/resume.pdf'
+}

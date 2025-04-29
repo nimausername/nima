@@ -92,15 +92,17 @@ function ProjectVideo({ src }: ProjectVideoProps) {
 function MagneticSocialLink({
   children,
   link,
+  isResume = false,
 }: {
   children: React.ReactNode
   link: string
+  isResume?: boolean
 }) {
   return (
     <Magnetic springOptions={{ bounce: 0 }} intensity={0.3}>
       <a
         href={link}
-        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+        className={`group relative inline-flex shrink-0 items-center gap-[1px] rounded-full px-2.5 py-1 text-sm transition-colors duration-200 ${isResume ? 'bg-blue-500 text-white hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700' : 'bg-zinc-100 text-black hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700'}`}
       >
         {children}
         <svg
@@ -137,8 +139,7 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
-            Focused on creating intuitive and performant web experiences.
-            Bridging the gap between design and development.
+          I’m Nima Khabbazi, a web developer with 10+ years of experience. I craft innovative, high-performance websites with precision and creativity.
           </p>
         </div>
       </motion.section>
@@ -263,6 +264,9 @@ export default function Personal() {
               {link.label}
             </MagneticSocialLink>
           ))}
+          <MagneticSocialLink link="/resume.pdf" isResume={true}>
+            Resume
+          </MagneticSocialLink>
         </div>
       </motion.section>
     </motion.main>
