@@ -46,7 +46,7 @@ export const PROJECTS: Project[] = [
   {
     name: 'Alpak SAN. TİC. LTD. ŞTİ. - Web Development',
     description: 'Food sector web development for Alpak SAN. TİC. LTD. ŞTİ. Mainly NextJs and React based.',
-    link: 'https://motion-primitives.com/',
+    link: 'https://alpak.vercel.app/',
     video:
       'https://res.cloudinary.com/dwaogvuok/video/upload/v1745885244/2_alwg7q.mp4',
     id: 'project2',
@@ -75,7 +75,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     title: 'Technical Support Specialist',
     start: '08/2023',
     end: '11/2023',
-    link: 'https://ibelick.com',
+    link: 'https://tiktok.com',
     id: 'work3',
   },
   {
