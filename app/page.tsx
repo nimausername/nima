@@ -264,9 +264,6 @@ export default function Personal() {
               {link.label}
             </MagneticSocialLink>
           ))}
-          <MagneticSocialLink link="/resume.pdf" isResume={true}>
-            Resume
-          </MagneticSocialLink>
         </div>
       </motion.section>
     </motion.main>
