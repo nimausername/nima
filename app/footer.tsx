@@ -1,107 +1,81 @@
 'use client'
-import { AnimatedBackground } from '@/components/ui/animated-background'
-import { TextLoop } from '@/components/ui/text-loop'
-import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react'
-import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
-
-const THEMES_OPTIONS = [
-  {
-    label: 'Light',
-    id: 'light',
-    icon: <SunIcon className="h-4 w-4" />,
-  },
-  {
-    label: 'Dark',
-    id: 'dark',
-    icon: <MoonIcon className="h-4 w-4" />,
-  },
-  {
-    label: 'System',
-    id: 'system',
-    icon: <MonitorIcon className="h-4 w-4" />,
-  },
-]
-
-function ThemeSwitch() {
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return null
-  }
-
-  return (
-    <AnimatedBackground
-      className="pointer-events-none rounded-lg bg-zinc-100 dark:bg-zinc-800"
-      defaultValue={theme}
-      transition={{
-        type: 'spring',
-        bounce: 0,
-        duration: 0.2,
-      }}
-      enableHover={false}
-      onValueChange={(id) => {
-        setTheme(id as string)
-      }}
-    >
-      {THEMES_OPTIONS.map((theme) => {
-        return (
-          <button
-            key={theme.id}
-            className="inline-flex h-7 w-7 items-center justify-center text-zinc-500 transition-colors duration-100 focus-visible:outline-2 data-[checked=true]:text-zinc-950 dark:text-zinc-400 dark:data-[checked=true]:text-zinc-50"
-            type="button"
-            aria-label={`Switch to ${theme.label} theme`}
-            data-id={theme.id}
-          >
-            {theme.icon}
-          </button>
-        )
-      })}
-    </AnimatedBackground>
-  )
-}
-
-function StatusIndicator() {
-  return (
-    <div className="flex items-center gap-2 text-xs text-zinc-500">
-      <div className="relative flex h-2 w-2">
-        <div className="absolute h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></div>
-        <div className="relative h-2 w-2 rounded-full bg-green-500"></div>
-      </div>
-      <span>Online</span>
-    </div>
-  )
-}
+import { GithubIcon, TwitterIcon, LinkedinIcon, HeartIcon } from 'lucide-react'
+import { SOCIAL_LINKS } from './data'
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-zinc-100 px-0 py-8 min-h-[150px] dark:border-zinc-800 relative overflow-hidden">
-      <span
-        aria-hidden="true"
-        className="pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[180px] font-extrabold uppercase tracking-widest text-zinc-200 dark:text-zinc-700 opacity-20 whitespace-nowrap z-0"
-        style={{ WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)', maskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)' }}
-      >
-        NIMA
-      </span>
-      <div className="flex items-center justify-between relative z-10">
-        <div className="flex items-center gap-4">
-          <TextLoop className="text-xs text-zinc-500">
-            <span>
-              <a href="https://github.com/nimausername" target="_blank">© {new Date().getFullYear()} @nimausername.</a>
-            </span>
-            <span>
-              Thanks to <a href="https://x.com/Ibelick" target="_blank" className="underline hover:text-zinc-700 dark:hover:text-zinc-300">Ibelick</a>.
-            </span>
-          </TextLoop>
-        </div>
-        <div className="flex items-center gap-4 text-xs text-zinc-400">
-          <StatusIndicator />
-          <ThemeSwitch />
+    <footer className="mt-24 border-t border-zinc-200 dark:border-zinc-800">
+      <div className="mx-auto w-full max-w-screen-sm px-4 py-16">
+        <div className="rounded-lg bg-zinc-50/50 dark:bg-zinc-900/50 p-8 border border-zinc-200/50 dark:border-zinc-800/50">
+          <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-8">
+            
+            {/* Left column */}
+            <div className="text-center sm:text-left space-y-4">
+              <div className="space-y-3">
+                <div className="flex items-center justify-center sm:justify-start gap-3">
+                  <img 
+                    src="/3e477e83c35e2a7a38f19ccdad163faa.gif" 
+                    alt="Profile animation" 
+                    className="h-12 w-12 object-cover"
+                  />
+                  <div className="space-y-1">
+                    <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100">
+                      Nima Khabbazi
+                    </h2>
+                    <p className="text-zinc-600 dark:text-zinc-400">Developer</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Simple social links */}
+              <div className="flex items-center justify-center sm:justify-start gap-3">
+                {SOCIAL_LINKS.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200"
+                    aria-label={`Follow me on ${social.label}`}
+                  >
+                    {social.label === 'Github' && <GithubIcon className="h-4 w-4" />}
+                    {social.label === 'Twitter' && <TwitterIcon className="h-4 w-4" />}
+                    {social.label === 'LinkedIn' && <LinkedinIcon className="h-4 w-4" />}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Right column */}
+            <div className="text-center sm:text-right space-y-3 text-sm">
+              <p className="text-zinc-600 dark:text-zinc-400">
+                Built with <HeartIcon className="inline h-3 w-3 text-red-500" /> and lots of Tea
+              </p>
+              
+              <p className="text-zinc-500 dark:text-zinc-500">
+                Thanks to{' '}
+                <a 
+                  href="https://x.com/Ibelick" 
+                  target="_blank" 
+                  className="text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 underline underline-offset-2 transition-colors"
+                >
+                  Ibelick
+                </a>
+                {' '}for the project
+              </p>
+              
+              <p className="text-zinc-500 dark:text-zinc-500 pt-2 border-t border-zinc-200 dark:border-zinc-800">
+                © {new Date().getFullYear()}{' '}
+                <a 
+                  href="https://www.nimakhabbazi.com" 
+                  target="_blank" 
+                  className="text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                >
+                  @nimausername
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

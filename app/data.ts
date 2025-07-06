@@ -151,6 +151,12 @@ export const BLOG_POSTS: BlogPost[] = [
     link: '/blog/my-journey',
     uid: 'blog-1',
   },
+  {
+    title: 'Music Discovery: Adam Ulanicki - Some Say',
+    description: 'A sonic journey through ambient soundscapes and emotional depth.',
+    link: '/blog/adam-ulanicki-some-say',
+    uid: 'blog-2',
+  },
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
@@ -165,10 +171,6 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: 'LinkedIn',
     link: 'https://www.linkedin.com/in/nimausername/',
-  },
-  {
-    label: 'Instagram',
-    link: 'https://www.instagram.com/nimausername/',
   },
 ]
 
